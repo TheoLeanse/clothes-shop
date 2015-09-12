@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function (grunt) {
-    var sourceFiles = ['javascripts/*.js', 'test/**/*Spec.js'];
+    var sourceFiles = ['javascripts/*.js', 'test/spec/dummySpec.js'];
 
     require('jit-grunt')(grunt, {
         bower: 'grunt-bower-installer'
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                         'karma-phantomjs-launcher'
                     ],
                     browsers: ['PhantomJS'],
-                    frameworks: ['jasmine']
+                    frameworks: ['jasmine']                    
                 }
             }
         },
