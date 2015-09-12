@@ -12,7 +12,12 @@ module.exports = function (grunt) {
         jscs: {},
         jshint: {},
         bower: { install: {} },
-        concurrent: {},
+        concurrent: {
+            options: {
+                logConcurrentOutput: true
+            },
+            watch: ['watch:js']
+        },
         karma: {},
         browserSync: {}
     });
