@@ -1,0 +1,17 @@
+{
+  "name": "clothes-shop",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TheoLeanse/clothes-shop",
+  "authors": [
+    "TheoLeanse <theoleanse@gmail.com>"
+  ],
+  "description": "a responsive website for a clothing retailer",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
