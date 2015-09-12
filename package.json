@@ -18,6 +18,8 @@
   "homepage": "https://github.com/TheoLeanse/clothes-shop#readme",
   "devDependencies": {
     "bower": "^1.5.2",
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-bower-installer": "^0.3.6",
+    "jit-grunt": "^0.9.1"
   }
 }
