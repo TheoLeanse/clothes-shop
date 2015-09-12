@@ -8,7 +8,9 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         githooks: {},
-        watch: {},
+        watch: { options: { spawn: false },
+                 js: { files: sourceFiles,
+                       tasks: ['newer:jshint', 'newer:jscs', 'karma'] } },
         jscs: {},
         jshint: {},
         bower: { install: {} },
