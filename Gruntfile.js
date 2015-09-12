@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function (grunt) {
-    var sourceFiles = [];
+    var sourceFiles = ['javascripts/*.js', 'test/**/*Spec.js'];
 
     require('jit-grunt')(grunt, {
         bower: 'grunt-bower-installer'
@@ -20,7 +20,7 @@ module.exports = function (grunt) {
             },
             watch: ['watch:js']
         },
-        karma: {},
+        karma: { unit: { singleRun: true, options: { files: ['test/**/*Spec.js'] } } },
         browserSync: {}
     });
     grunt.registerTask('default', ['bower', 'concurrent:watch', 'browserSync']);
