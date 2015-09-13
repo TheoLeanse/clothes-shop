@@ -44,8 +44,8 @@ module.exports = function (grunt) {
                     files: [
                         'bower_components/angular/angular.js',
                         'bower_components/angular-mocks/angular-mocks.js',
-                        'javscripts/app.js',
-                        'test/**/*Spec.js'
+                        'javascripts/app.js',
+                        'test/spec/dummySpec.js'
                     ],
                     plugins: [
                         'karma-chrome-launcher',
