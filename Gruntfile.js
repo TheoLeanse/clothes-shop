@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             options: { spawn: false },
             js: {
                 files: sourceFiles,
-                tasks: ['karma', 'newer:jshint', 'newer:jscs']
+                tasks: ['karma', 'newer:jscs', 'newer:jshint']
             }
         },
         jscs: {
@@ -59,13 +59,18 @@ module.exports = function (grunt) {
         },
         browserSync: {
             bsFiles: {
-                src: ['test/SpecRunner.html']
+                src: [
+                    'test/index.html',
+                    'javascripts/app.js',
+                    'test/spec/dummySpec.js',
+                    'bower_components/jasmine-core/lib/jasmine-core/jasmine.js'
+                ]
             },
             options: {
                 watchTask: true,
                 host: '0.0.0.0',
                 server: {
-                    baseDir: './test/'
+                    baseDir: ['test', 'javascripts']
                 },
                 open: true,
                 ghostMode: {
@@ -76,5 +81,5 @@ module.exports = function (grunt) {
                 }
             } }
     });
-    grunt.registerTask('default', ['bower', 'concurrent:watch', 'browserSync']);
+    grunt.registerTask('default', ['bower', 'browserSync', 'concurrent:watch']);
 };
