@@ -1,1 +1,1 @@
-var clothesStore = angular.module('ClothesStore', ['ngResource']);
+var clothesStore = angular.module('ClothesStore', []);
