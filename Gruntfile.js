@@ -37,7 +37,26 @@ module.exports = function (grunt) {
                 }
             }
         },
-        browserSync: {}
+        browserSync: {
+            bsFiles: {
+                src: [
+                    'test/SpecRunner.html',
+                ]
+            },
+            options: {
+                watchTask: true,
+                host: '0.0.0.0',
+                server: {
+                    baseDir: './test/'
+                },
+                open: true,
+                ghostMode: {
+                    clicks: true,
+                    scroll: true,
+                    location: true,
+                    forms: true
+                }
+            } }
     });
     grunt.registerTask('default', ['bower', 'concurrent:watch', 'browserSync']);
 };
