@@ -70,7 +70,7 @@ module.exports = function (grunt) {
                 watchTask: true,
                 host: '0.0.0.0',
                 server: {
-                    baseDir: ['test', 'javascripts']
+                    baseDir: ['test', 'javascripts', 'bower_components', './']
                 },
                 open: true,
                 ghostMode: {
