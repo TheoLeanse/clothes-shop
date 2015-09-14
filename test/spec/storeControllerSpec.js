@@ -10,5 +10,11 @@ describe('StoreController', function () {
     it('should have a shopping cart', function () {
         expect(ctrl.shoppingCart).toBeDefined();
     });
-    
+    it('shopping cart is created empty', function () {
+        expect(ctrl.shoppingCart).toEqual([]);
+    });
+    it('should allow a user to add a product to their shopping cart', function () {
+        ctrl.addToCart(store.products[0])
+        expect(ctrl.shoppingCart).toEqual([]);
+    });
 });
