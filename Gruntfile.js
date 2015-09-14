@@ -2,7 +2,9 @@
 module.exports = function (grunt) {
     var sourceFiles = [
         'javascripts/*.js',
-        'test/spec/dummySpec.js'
+        'javascripts/products.js',
+        'test/spec/productsSpec.js',
+        'test/spec/storeControllerSpec.js'
     ];
 
     require('jit-grunt')(grunt, {
@@ -45,7 +47,10 @@ module.exports = function (grunt) {
                         'bower_components/angular/angular.js',
                         'bower_components/angular-mocks/angular-mocks.js',
                         'javascripts/app.js',
-                        'test/spec/dummySpec.js'
+                        'javascripts/storeController.js',
+                        'javascripts/products.js',
+                        'test/spec/productsSpec.js',
+                        'test/spec/storeControllerSpec.js'
                     ],
                     plugins: [
                         'karma-chrome-launcher',
@@ -62,7 +67,10 @@ module.exports = function (grunt) {
                 src: [
                     'test/index.html',
                     'javascripts/app.js',
-                    'test/spec/dummySpec.js',
+                    'javascripts/products.js',
+                    'javascripts/storeController.js',
+                    'test/spec/productsSpec.js',
+                    'test/spec/storeControllerSpec.js',
                     'bower_components/jasmine-core/lib/jasmine-core/jasmine.js'
                 ]
             },
