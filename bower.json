@@ -1,0 +1,25 @@
+{
+  "name": "clothes-shop",
+  "version": "0.0.1",
+  "homepage": "https://github.com/TheoLeanse/clothes-shop",
+  "authors": [
+    "TheoLeanse <theoleanse@gmail.com>"
+  ],
+  "description": "a responsive website for a clothing retailer",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.4.5",
+    "jasmine-core": "~2.3.4"
+  },
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-resource": "~1.4.5"
+  }
+}
