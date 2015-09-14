@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         'test/spec/productsSpec.js',
         'test/spec/storeControllerSpec.js'
     ];
-
+    grunt.loadNpmTasks('grunt-protractor-runner');
     require('jit-grunt')(grunt, {
         bower: 'grunt-bower-installer'
     });
@@ -87,7 +87,20 @@ module.exports = function (grunt) {
                     location: true,
                     forms: true
                 }
-            } }
+            }
+        },
+        protractor: {
+            options: {
+                configFile: 'node_modules/protractor/example/conf.js',
+                keepAive: true,
+                noColor: false
+            },
+            all: {
+                options: {
+                    configFile: 'test/e2e/conf.js'
+                }
+            }
+        }
     });
     grunt.registerTask('default', ['bower', 'browserSync', 'concurrent:watch']);
 };
