@@ -1,4 +1,3 @@
 {
-  "preset": "crockford",
-  "validateIndentation": 2
+  "preset": "crockford"
 }
