@@ -68,6 +68,7 @@ module.exports = function (grunt) {
                     'test/index.html',
                     'javascripts/app.js',
                     'javascripts/products.js',
+                    'javascripts/storeController.js',
                     'test/spec/productsSpec.js',
                     'test/spec/storeControllerSpec.js',
                     'bower_components/jasmine-core/lib/jasmine-core/jasmine.js'
