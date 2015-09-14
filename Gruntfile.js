@@ -49,7 +49,8 @@ module.exports = function (grunt) {
                         'javascripts/app.js',
                         'javascripts/storeController.js',
                         'javascripts/products.js',
-                        'test/spec/productsSpec.js'
+                        'test/spec/productsSpec.js',
+                        'test/spec/storeControllerSpec.js'
                     ],
                     plugins: [
                         'karma-chrome-launcher',
