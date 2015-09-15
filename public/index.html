@@ -7,13 +7,13 @@
     <script src="javascripts/storeController.js"></script>
   </head>
   <body ng-controller="StoreController as storeCtrl">
-    <ul ng-repeat="product in storeCtrl.products">
+    <ul ng-repeat="product in storeCtrl.products">Products:
       <li>
         <span> {{ product.productName }} </span>
         <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
       </li>
     </ul>
-    <ul ng-repeat="cartItem in storeCtrl.shoppingCart">
+    <ul ng-repeat="cartItem in storeCtrl.shoppingCart">Shopping cart:
       <li>
         <span> {{ cartItem.productName }} </span>
       </li>
