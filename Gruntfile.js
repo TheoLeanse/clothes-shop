@@ -1,8 +1,8 @@
 'use strict';
 module.exports = function (grunt) {
     var sourceFiles = [
-        'javascripts/*.js',
-        'javascripts/products.js',
+        'public/javascripts/*.js',
+        'public/javascripts/products.js',
         'test/spec/productsSpec.js',
         'test/spec/storeControllerSpec.js'
     ];
@@ -44,11 +44,11 @@ module.exports = function (grunt) {
                 singleRun: true,
                 options: {
                     files: [
-                        'bower_components/angular/angular.js',
-                        'bower_components/angular-mocks/angular-mocks.js',
-                        'javascripts/app.js',
-                        'javascripts/storeController.js',
-                        'javascripts/products.js',
+                        'public/bower_components/angular/angular.js',
+                        'public/bower_components/angular-mocks/angular-mocks.js',
+                        'public/javascripts/app.js',
+                        'public/javascripts/storeController.js',
+                        'public/javascripts/products.js',
                         'test/spec/productsSpec.js',
                         'test/spec/storeControllerSpec.js'
                     ],
@@ -66,19 +66,24 @@ module.exports = function (grunt) {
             bsFiles: {
                 src: [
                     'test/index.html',
-                    'javascripts/app.js',
-                    'javascripts/products.js',
-                    'javascripts/storeController.js',
+                    'public/javascripts/app.js',
+                    'public/javascripts/products.js',
+                    'public/javascripts/storeController.js',
                     'test/spec/productsSpec.js',
                     'test/spec/storeControllerSpec.js',
-                    'bower_components/jasmine-core/lib/jasmine-core/jasmine.js'
+                    'public/bower_components/jasmine-core/lib/jasmine-core/jasmine.js'
                 ]
             },
             options: {
                 watchTask: true,
                 host: '0.0.0.0',
                 server: {
-                    baseDir: ['test', 'javascripts', 'bower_components', './']
+                    baseDir: [
+                        'test',
+                        'public/javascripts',
+                        'public/bower_components',
+                        './'
+                    ]
                 },
                 open: true,
                 ghostMode: {
