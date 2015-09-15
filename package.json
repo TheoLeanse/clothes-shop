@@ -2,9 +2,10 @@
   "name": "clothes-shop",
   "version": "0.0.1",
   "description": "a responsive website for a clothing retailer",
-  "main": "node app.js",
+  "main": "app.js",
   "scripts": {
-    "test": "grunt karma"
+    "test": "grunt karma",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
