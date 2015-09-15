@@ -1,7 +1,9 @@
 describe('Adding a product to the shopping cart', function () {
-    it('should display product(s)', function() {
+    var productList = element.all(by.repeater('product in storeCtrl.products'));
+    beforeEach(function () {
         browser.get('http://localhost:8080');
-        var products = element(by.repeater(''));
-        expect(products.count() >= 0).toBeTruthy();
+    });
+    it('should display product name(s)', function() {
+        expect(productList.get(0).getText()).toEqual('Almond Toe Court Shoes, Patent Black');
     });
 });

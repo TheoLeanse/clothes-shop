@@ -2,6 +2,15 @@
 <html lang="en" ng-app="ClothesStore">
   <head>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="javascripts/products.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/storeController.js"></script>
   </head>
-  <body></body>
+  <body ng-controller="StoreController as storeCtrl">
+    <ul ng-repeat="product in storeCtrl.products">
+      <li class="product">
+        {{ product.productName }}
+      </li>
+    </ul>
+  </body>
 </html>
