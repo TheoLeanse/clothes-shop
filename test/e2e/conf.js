@@ -8,7 +8,8 @@ exports.config = {
     framework: 'jasmine2',
     
     specs: [
-        'adding-product-to-cart-spec.js'
+        'adding-product-to-cart-spec.js',
+        'removing-items-from-cart-spec.js'
     ],
     
     jasmineNodeOpts: {
