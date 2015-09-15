@@ -1,15 +1,17 @@
 exports.config = {
-  directConnect: true,
-
-  capabilities: {
-    'browserName': 'chrome'
+    directConnect: true,
+    
+    capabilities: {
+      'browserName': 'chrome'
   },
-
-  framework: 'jasmine2',
-
-  specs: ['dummy-spec.js'],
-
-  jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000
+    
+    framework: 'jasmine2',
+    
+    specs: [
+        'adding-product-to-cart-spec.js'
+    ],
+    
+    jasmineNodeOpts: {
+      defaultTimeoutInterval: 30000
   }
 };
