@@ -4,5 +4,11 @@ clothesStore.controller('StoreController', function () {
     self.shoppingCart = [];
     self.addToCart = function (item) {        
         self.shoppingCart.push(item);
-    }
+    };
+    self.remove = function (item) {
+        var index = self.shoppingCart.indexOf(item);
+        if (index > -1) {
+            self.shoppingCart.splice(index, 1);
+        }
+    };
 });

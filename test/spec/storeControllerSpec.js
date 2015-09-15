@@ -17,4 +17,9 @@ describe('StoreController', function () {
         ctrl.addToCart(store.products[0])
         expect(ctrl.shoppingCart).toEqual([{ productName: 'Almond Toe Court Shoes, Patent Black' }]);
     });
+    it('should allow a user to remove a product from their cart', function () {
+        ctrl.addToCart(store.products[0]);
+        ctrl.remove(store.products[0]);
+        expect(ctrl.shoppingCart).toEqual([]);
+    });
 });
