@@ -19,3 +19,5 @@ Steps:
 - Travis CI set up to run grunt karma (via npm test)
 - test-drive user story one on the angular side: namespace of store; JSON to store one product; store controller to have a shopping cart model; function to add an item to the shopping cart.
 - set up protractor to prepare to test drive the UI (problems with conf.js, chromeDriver, updating global rather than local selenium...)
+- need to serve up some files to test, so make a little static app
+- now I have it, set up staging heroku and development heroku
