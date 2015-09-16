@@ -11,4 +11,11 @@ clothesStore.controller('StoreController', function () {
             self.shoppingCart.splice(index, 1);
         }
     };
+    self.cartTotal = function () {
+        var total = 0;
+        self.shoppingCart.forEach(function (element) {
+            total += element.price;
+        });
+        return '£' + total.toFixed(2);
+    };
 });

@@ -10,16 +10,17 @@
     <ul ng-repeat="product in storeCtrl.products">Products:
       <li>
         <span> {{ product.productName }} </span>
-        <span> {{ product.price }} </span>
+        <span> £{{ product.price.toFixed(2) }} </span>
         <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
       </li>
     </ul>
     <ul ng-repeat="cartItem in storeCtrl.shoppingCart">Shopping cart:
       <li>
         <span> {{ cartItem.productName }} </span>
-        <span> {{ cartItem.price }} </span>
+        <span> £{{ cartItem.price.toFixed(2) }} </span>
         <button ng-click="storeCtrl.remove(cartItem)">Remove from cart</button>
       </li>
     </ul>
+    <p>Total: {{ storeCtrl.cartTotal() }}</p>
   </body>
 </html>
