@@ -15,7 +15,7 @@ describe('StoreController', function () {
     });
     it('should allow a user to add a product to their shopping cart', function () {
         ctrl.addToCart(store.products[0])
-        expect(ctrl.shoppingCart).toEqual([{ productName: 'Almond Toe Court Shoes, Patent Black' }]);
+        expect(ctrl.shoppingCart).toEqual([{ productName: 'Almond Toe Court Shoes, Patent Black', price: '£99.00' }]);
     });
     it('should allow a user to remove a product from their cart', function () {
         ctrl.addToCart(store.products[0]);
