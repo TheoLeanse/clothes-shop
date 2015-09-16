@@ -10,6 +10,7 @@
     <ul ng-repeat="product in storeCtrl.products">Products:
       <li>
         <span> {{ product.productName }} </span>
+        <span> {{ product.price }} </span>
         <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
       </li>
     </ul>
