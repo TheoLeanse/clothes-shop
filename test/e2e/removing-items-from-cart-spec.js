@@ -1,5 +1,5 @@
 describe('Removing items from shopping cart', function () {
-    var cart = element.all(by.repeater('cartItem in storeCtrl.shoppingCart'));
+    var cart = element.all(by.repeater('cartItem in storeCtrl.basket'));
     beforeEach(function () {
         browser.get('http://localhost:8080');
     });

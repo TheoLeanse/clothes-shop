@@ -9,28 +9,29 @@
   <body ng-controller="StoreController as storeCtrl">
     <div>
       Products:
-      <ul ng-repeat="product in storeCtrl.products">Products:
+      <ul ng-repeat="product in storeCtrl.products">
         <li>
           <span> {{ product.name }} </span>
           <span> £{{ product.price.toFixed(2) }} </span>
-          <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
+          <span> {{ product.category }} </span>
+          <button ng-click="storeCtrl.add(product)">Add to cart</button>
         </li>
       </ul>
     </div>
     <div>
       Shopping Cart
-      <ul ng-repeat="item in storeCtrl.shoppingCart">
+      <ul ng-repeat="item in storeCtrl.basket">
         <li>
           <span> {{ item.name }} </span>
           <span> £{{ item.price.toFixed(2) }} </span>
           <button ng-click="storeCtrl.remove(item)">Remove from cart</button>
         </li>
       </ul>
-      <p>Total: {{ storeCtrl.cartTotal() }}</p>
-      <form ng-submit="storeCtrl.applyDiscount()">
-        <input type="text" ng-model="storeCtrl.discountCode"></input>
+      <p>Total: £{{ storeCtrl.total.toFixed(2) }}</p>
+      <form ng-submit="storeCtrl.redeem(voucher)">
+        <input type="text" ng-model="voucher"></input>
       </form>
-      <p> {{ storeCtrl.discountMessage }} </p>
+      <p> {{ storeCtrl.voucherError }} </p>
     </div>
   </body>
 </html>

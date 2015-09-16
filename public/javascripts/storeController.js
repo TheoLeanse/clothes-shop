@@ -1,31 +1,25 @@
 clothesStore.controller('StoreController', function () {
     var self = this;
     self.products = store.products;
-    self.shoppingCart = [];
-    self.addToCart = function (item) {        
-        self.shoppingCart.push(item);
+    self.basket = [];
+    self.total = 0;
+    self.add = function (item) {        
+        self.basket.push(item);
+        self.total += item.price;
     };
     self.remove = function (item) {
-        var index = self.shoppingCart.indexOf(item);
+        var index = self.basket.indexOf(item);
         if (index > -1) {
-            self.shoppingCart.splice(index, 1);
+            self.basket.splice(index, 1);
         }
     };
-    self.cartTotal = function () {
-        var total = 0;
-        self.shoppingCart.forEach(function (element) {
-            total += element.price;
-        });
-        if (self.hasDiscount) {
-            total -= 5;
-        }
-        return '£' + total.toFixed(2);
-    };
-    self.applyDiscount = function () {
-        if (self.discountCode == 'fiver') {
-            self.hasDiscount = true;
+    self.redeem = function (voucher) {
+        if (voucher == 'fiver') {
+            self.total -= 5;
+        } else if (voucher == 'tenner' && self.total > 50) {
+            self.total -= 10;
         } else {
-            self.discountMessage = 'incorrect code';
+            self.voucherError = 'invalid code';
         }
     };
 });
