@@ -1,8 +1,8 @@
 describe('Viewing an order\'s total price', function () {
     var storeEl = element(by.repeater('product in storeCtrl.products'));
     var storePriceTagEl = storeEl.element(by.binding('product.price'));
-    var cartEl = element(by.repeater('cartItem in storeCtrl.shoppingCart'));
-    var cartPriceTagEl = cartEl.element(by.binding('cartItem.price'));
+    var cartEl = element(by.repeater('item in storeCtrl.shoppingCart'));
+    var cartPriceTagEl = cartEl.element(by.binding('item.price'));
     var addItemBtn = element(by.buttonText('Add to cart'));
     var totalPriceEl = element(by.binding('storeCtrl.cartTotal()'));
     
