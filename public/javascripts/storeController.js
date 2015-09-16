@@ -5,10 +5,7 @@ clothesStore.controller('StoreController', function () {
     self.total = 0;
     self.add = function (item) {        
         self.basket.push(item);
-        updateTotal(item.price);
-    };
-    function updateTotal (price) {
-        self.total += price;
+        self.total += item.price;
     };
     self.remove = function (item) {
         var index = self.basket.indexOf(item);
