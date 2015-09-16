@@ -26,4 +26,16 @@ describe('StoreController', function () {
         ctrl.addToCart(store.products[0]);
         expect(ctrl.cartTotal()).toEqual('£99.00');
     });
+    it('should apply a $5 discount with code \'fiver\'', function () {
+        ctrl.addToCart(store.products[0]);
+        ctrl.discountCode = 'fiver';
+        ctrl.applyDiscount();
+        expect(ctrl.cartTotal()).toEqual('£94.00');
+    });
+    it('should error on incorrect discount code', function () {
+        ctrl.addToCart(store.products[0]);
+        ctrl.discountCode = 'tenner';
+        ctrl.applyDiscount();
+        expect(ctrl.discountMessage).toEqual('incorrect code');
+    });
 });

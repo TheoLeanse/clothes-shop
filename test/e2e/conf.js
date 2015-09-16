@@ -10,7 +10,8 @@ exports.config = {
     specs: [
         'adding-product-to-cart-spec.js',
         'removing-items-from-cart-spec.js',
-        'viewing-total-price-spec.js'
+        'viewing-total-price-spec.js',
+        'applying-a-voucher-spec.js',
     ],
     
     jasmineNodeOpts: {
