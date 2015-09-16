@@ -7,7 +7,7 @@ describe("Products", function () {
             expect(store.products[0].productName).toEqual('Almond Toe Court Shoes, Patent Black');            
         });
         it('should have a price', function () {
-            expect(store.products[0].price).toEqual('£99.00');
+            expect(store.products[0].price).toEqual(99);
         });
     });
 });
