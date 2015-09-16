@@ -17,6 +17,7 @@
     <ul ng-repeat="cartItem in storeCtrl.shoppingCart">Shopping cart:
       <li>
         <span> {{ cartItem.productName }} </span>
+        <span> {{ cartItem.price }} </span>
         <button ng-click="storeCtrl.remove(cartItem)">Remove from cart</button>
       </li>
     </ul>
