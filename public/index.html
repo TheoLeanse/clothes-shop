@@ -7,20 +7,26 @@
     <script src="javascripts/storeController.js"></script>
   </head>
   <body ng-controller="StoreController as storeCtrl">
-    <ul ng-repeat="product in storeCtrl.products">Products:
-      <li>
-        <span> {{ product.productName }} </span>
-        <span> £{{ product.price.toFixed(2) }} </span>
-        <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
-      </li>
-    </ul>
-    <ul ng-repeat="cartItem in storeCtrl.shoppingCart">Shopping cart:
-      <li>
-        <span> {{ cartItem.productName }} </span>
-        <span> £{{ cartItem.price.toFixed(2) }} </span>
-        <button ng-click="storeCtrl.remove(cartItem)">Remove from cart</button>
-      </li>
-    </ul>
-    <p>Total: {{ storeCtrl.cartTotal() }}</p>
+    <div>
+      Products:
+      <ul ng-repeat="product in storeCtrl.products">Products:
+        <li>
+          <span> {{ product.name }} </span>
+          <span> £{{ product.price.toFixed(2) }} </span>
+          <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
+        </li>
+      </ul>
+    </div>
+    <div>
+      Shopping Cart
+      <ul ng-repeat="item in storeCtrl.shoppingCart">
+        <li>
+          <span> {{ item.name }} </span>
+          <span> £{{ item.price.toFixed(2) }} </span>
+          <button ng-click="storeCtrl.remove(item)">Remove from cart</button>
+        </li>
+      </ul>
+      <p>Total: {{ storeCtrl.cartTotal() }}</p>
+    </div>
   </body>
 </html>

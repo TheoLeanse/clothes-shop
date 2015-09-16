@@ -4,7 +4,7 @@ describe("Products", function () {
     });
     describe('a product', function () {
         it('should have a product name', function () {
-            expect(store.products[0].productName).toEqual('Almond Toe Court Shoes, Patent Black');            
+            expect(store.products[0].name).toEqual('Almond Toe Court Shoes, Patent Black');            
         });
         it('should have a price', function () {
             expect(store.products[0].price).toEqual(99);
