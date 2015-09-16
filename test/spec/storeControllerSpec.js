@@ -32,9 +32,15 @@ describe('StoreController', function () {
         ctrl.applyDiscount();
         expect(ctrl.cartTotal()).toEqual('£94.00');
     });
-    it('should error on incorrect discount code', function () {
+    it('should apply a £10 discount with code \'tenner\' and total over £50', function () {
         ctrl.addToCart(store.products[0]);
         ctrl.discountCode = 'tenner';
+        ctrl.applyDiscount();
+        expect(ctrl.cartTotal()).toEqual('£89.00');
+    });
+    it('should error on incorrect discount code', function () {
+        ctrl.addToCart(store.products[0]);
+        ctrl.discountCode = 'wrong';
         ctrl.applyDiscount();
         expect(ctrl.discountMessage).toEqual('incorrect code');
     });
