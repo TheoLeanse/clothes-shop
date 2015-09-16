@@ -13,9 +13,15 @@ describe('Applying a voucher', function () {
     });
     it('should show error with incorrect code', function () {
         element(by.buttonText('Add to cart')).click();
-        discountCodeField.sendKeys('tenner');
+        discountCodeField.sendKeys('wrong');
         discountCodeField.sendKeys(protractor.Key.ENTER);
         expect(discountErrorEl.getText()).toEqual('incorrect code');
         expect(totalPriceEl.getText()).toEqual('Total: £99.00');
+    });
+    it('should allow \'tenner\' discount with total over £50', function () {
+        element(by.buttonText('Add to cart')).click();
+        discountCodeField.sendKeys('tenner');
+        discountCodeField.sendKeys(protractor.Key.ENTER);
+        expect(totalPriceEl.getText()).toEqual('Total: £89.00');
     });
 });
