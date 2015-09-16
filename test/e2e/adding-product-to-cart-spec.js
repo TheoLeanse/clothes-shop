@@ -2,7 +2,7 @@ describe('Adding a product to the shopping cart', function () {
     var productList  = element.all(by.repeater('product in storeCtrl.products'));
     var productName   = element(by.binding('product.name'));
     var addProductBtn = element(by.buttonText('Add to cart'));
-    var cartItemName  = element(by.binding('cartItem.name'));
+    var cartItemName  = element(by.binding('item.name'));
     beforeEach(function () {
         browser.get('http://localhost:8080');
     });

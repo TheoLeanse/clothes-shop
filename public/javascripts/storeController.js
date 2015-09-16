@@ -16,6 +16,16 @@ clothesStore.controller('StoreController', function () {
         self.shoppingCart.forEach(function (element) {
             total += element.price;
         });
+        if (self.hasDiscount) {
+            total -= 5;
+        }
         return '£' + total.toFixed(2);
+    };
+    self.applyDiscount = function () {
+        if (self.discountCode == 'fiver') {
+            self.hasDiscount = true;
+        } else {
+            self.discountMessage = 'incorrect code';
+        }
     };
 });
