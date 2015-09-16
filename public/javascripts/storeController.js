@@ -23,13 +23,12 @@ clothesStore.controller('StoreController', function () {
         }
         return '£' + total.toFixed(2);
     };
-    self.applyDiscount = function () {
-        if (self.discountCode == 'fiver') {
+    self.applyDiscount = function (code) {
+        if (code == 'fiver') {
             self.hasFiverDiscount = true;
-        } else if (self.discountCode == 'tenner') {
+        } else if (code == 'tenner') {
             self.hasTennerDiscount = true;
-        }
-        else {
+        } else {
             self.discountMessage = 'incorrect code';
         }
     };

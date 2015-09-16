@@ -9,10 +9,11 @@
   <body ng-controller="StoreController as storeCtrl">
     <div>
       Products:
-      <ul ng-repeat="product in storeCtrl.products">Products:
+      <ul ng-repeat="product in storeCtrl.products">
         <li>
           <span> {{ product.name }} </span>
           <span> £{{ product.price.toFixed(2) }} </span>
+          <span> {{ product.category }} </span>
           <button ng-click="storeCtrl.addToCart(product)">Add to cart</button>
         </li>
       </ul>
@@ -27,8 +28,8 @@
         </li>
       </ul>
       <p>Total: {{ storeCtrl.cartTotal() }}</p>
-      <form ng-submit="storeCtrl.applyDiscount()">
-        <input type="text" ng-model="storeCtrl.discountCode"></input>
+      <form ng-submit="storeCtrl.applyDiscount(code)">
+        <input type="text" ng-model="code"></input>
       </form>
       <p> {{ storeCtrl.discountMessage }} </p>
     </div>

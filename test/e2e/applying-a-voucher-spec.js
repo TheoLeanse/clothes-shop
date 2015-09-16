@@ -1,7 +1,14 @@
 describe('Applying a voucher', function () {
-    var discountCodeField = element(by.model('storeCtrl.discountCode'));
+    var discountCodeField = element(by.model('code'));
     var totalPriceEl = element(by.binding('storeCtrl.cartTotal()'));
     var discountErrorEl = element(by.binding('storeCtrl.discountMessage'));
+    var items = element.all(by.repeater('product in storeCtrl.products'));
+    var blueFlipflopsElmnts = items.filter(function (elem) {
+        return elem.getText().then(function(text) {
+            return (text.indexOf('Flip Flops, Blue') > -1);
+        });
+    });
+    var buyBlueFlipflopsBtn = blueFlipflopsElmnts.get(0).element(by.buttonText('Add to cart'));
     beforeEach(function () {
         browser.get('http://localhost:8080');
     });
@@ -23,5 +30,12 @@ describe('Applying a voucher', function () {
         discountCodeField.sendKeys('tenner');
         discountCodeField.sendKeys(protractor.Key.ENTER);
         expect(totalPriceEl.getText()).toEqual('Total: £89.00');
+    });
+    it('should error with \'tenner\' discount on order under £50', function () {        
+        buyBlueFlipFlopsBtn.click();
+        discountCodeField.sendKeys('tenner');
+        discountCodeField.sendKeys(protractor.Key.ENTER);
+        expect(totalPriceEl.getText()).toEqual('Total: £19.00');
+        expect(discountErrorEl.getText()).toEqual('invalid code');
     });
 });
