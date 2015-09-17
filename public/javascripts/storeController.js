@@ -18,8 +18,15 @@ clothesStore.controller('StoreController', function () {
             self.total -= 5;
         } else if (voucher == 'tenner' && self.total > 50) {
             self.total -= 10;
+        } else if (voucher == 'fifteen' && self.total > 75 && basketIncludes('Footwear')) {
+            self.total -= 15;
         } else {
             self.voucherError = 'invalid code';
         }
+    };
+    function basketIncludes (category) {
+        return self.basket.some(function(elem) {
+            return elem.category.indexOf(category) > -1;
+        });
     };
 });
