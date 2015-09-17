@@ -25,6 +25,8 @@ clothesStore.controller('StoreController', function () {
         }
     };
     function basketIncludes (category) {
-        return self.basket.some(elem => elem.category.indexOf(category) > -1);
+        return self.basket.some(function(elem) {
+            return elem.category.indexOf(category) > -1;
+        });
     };
 });
