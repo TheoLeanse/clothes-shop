@@ -21,3 +21,6 @@ Steps:
 - set up protractor to prepare to test drive the UI (problems with conf.js, chromeDriver, updating global rather than local selenium...)
 - need to serve up some files to test, so make a little static app
 - now I have it, set up staging heroku and development heroku
+
+Steps to remove error: WARNING - more than one element found for locator by.buttonText("Add to cart") - the first result will be used
+Annoyed by vagueness of my protractor locators, so used filter, but then was a bit of a humungus function, and repeated for each product - so thought about helper methods and decided to make a module

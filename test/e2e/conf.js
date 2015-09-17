@@ -8,6 +8,7 @@ exports.config = {
     framework: 'jasmine2',
     
     specs: [
+        'spec-helpers.js',
         'adding-product-to-cart-spec.js',
         'removing-items-from-cart-spec.js',
         'viewing-total-price-spec.js',
