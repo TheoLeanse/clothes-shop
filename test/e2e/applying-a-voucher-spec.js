@@ -9,6 +9,12 @@ describe('Applying a voucher', function () {
         });
     });
     var buyBlueFlipflopsBtn = blueFlipflopsElmnts.get(0).element(by.buttonText('Add to cart'));
+    var courtShoesElmnts = items.filter(function (elem) {
+        return elem.getText().then(function(text) {
+            return (text.indexOf('Court Shoes') > -1);
+        });
+    });
+    var buyCourtShoesBtn = courtShoesElmnts.get(0).element(by.buttonText('Add to cart'));
     beforeEach(function () {
         browser.get('http://localhost:8080');
     });
@@ -37,5 +43,11 @@ describe('Applying a voucher', function () {
         discountCodeField.sendKeys(protractor.Key.ENTER);
         expect(totalPriceEl.getText()).toEqual('Total: £19.00');
         expect(discountErrorEl.getText()).toEqual('invalid code');
+    });
+    it('should apply \'fifteen\' voucher if valid', function () {
+        buyCourtShoesBtn.click();
+        discountCodeField.sendKeys('fifteen');
+        discountCodeField.sendKeys(protractor.Key.ENTER);
+        expect(totalPriceEl.getText()).toEqual('Total: £84.00');
     });
 });
