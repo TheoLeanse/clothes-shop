@@ -1,1 +1,1 @@
-var clothesStore = angular.module('ClothesStore', []);
+var clothesStore = angular.module('ClothesStore', ['ui.bootstrap']);

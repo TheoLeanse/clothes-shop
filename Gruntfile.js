@@ -46,6 +46,7 @@ module.exports = function (grunt) {
                     files: [
                         'public/bower_components/angular/angular.js',
                         'public/bower_components/angular-mocks/angular-mocks.js',
+                        'public//javascripts/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.13.4.min.js',
                         'public/javascripts/app.js',
                         'public/javascripts/storeController.js',
                         'public/javascripts/products.js',

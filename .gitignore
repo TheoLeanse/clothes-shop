@@ -2,3 +2,6 @@ node_modules
 bower_components
 lib/
 /npm-debug.log
+/public/javascripts/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.4.js
+/public/javascripts/ui-bootstrap-custom-build/ui-bootstrap-custom-0.13.4.min.js
+/public/javascripts/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.13.4.js
